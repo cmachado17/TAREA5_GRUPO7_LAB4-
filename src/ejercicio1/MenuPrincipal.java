@@ -7,6 +7,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MenuPrincipal extends JFrame {
 
@@ -24,6 +26,7 @@ public class MenuPrincipal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400, 250, 550, 400);
 		setTitle("Programa");
+		setLocationRelativeTo(null);	//configuro posición en pantalla
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -31,7 +34,16 @@ public class MenuPrincipal extends JFrame {
 		JMenu mnPeliculas = new JMenu("Peliculas");
 		menuBar.add(mnPeliculas);
 		
+		
+		//llamo a la ventana "AGREGAR PELÍCULA" desde el menú AGREGAR.
 		JMenuItem mntmAgregar = new JMenuItem("Agregar");
+		mntmAgregar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AgregarPelicula menuAgregar = new AgregarPelicula();
+				menuAgregar.setVisible(true);
+				
+			}
+		});
 		mnPeliculas.add(mntmAgregar);
 		
 		JMenuItem mntmListar = new JMenuItem("Listar");

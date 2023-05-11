@@ -49,6 +49,11 @@ public class Peliculas {
 	}
 	
 	
-	
+	//METODOS ÉSTATICOS
+	public static int getProximoID() {
+
+	 return cont;
+
+	}
 	
 }

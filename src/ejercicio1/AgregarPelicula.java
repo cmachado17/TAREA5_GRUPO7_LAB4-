@@ -47,6 +47,7 @@ public class AgregarPelicula extends JFrame {
 	public AgregarPelicula() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400, 250, 550, 400);
+		setLocationRelativeTo(null);	//configuro posición en pantalla
 		setTitle("Programa");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -58,11 +59,14 @@ public class AgregarPelicula extends JFrame {
 		lblId.setBounds(126, 90, 46, 14);
 		contentPane.add(lblId);
 		
+		
+		//CAMPO ID DE PELÍCULA
 		lblIDPelicula = new JLabel("1");
 		lblIDPelicula.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		lblIDPelicula.setBounds(248, 90, 46, 14);
 		contentPane.add(lblIDPelicula);
 		
+		//CAMPO NOMBRE
 		lblNombre = new JLabel("Nombre");
 		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNombre.setBounds(126, 118, 46, 14);
@@ -73,6 +77,8 @@ public class AgregarPelicula extends JFrame {
 		contentPane.add(textNombre);
 		textNombre.setColumns(10);
 		
+		
+		//DESPLEGABLE GÉNERO
 		lblGnero = new JLabel("G\u00E9nero");
 		lblGnero.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblGnero.setBounds(126, 148, 46, 14);
@@ -82,6 +88,13 @@ public class AgregarPelicula extends JFrame {
 		cbGenero.setBounds(248, 146, 140, 20);
 		contentPane.add(cbGenero);
 		
+		cbGenero.addItem(new Categorias("Terror"));
+		cbGenero.addItem(new Categorias("Accion"));
+		cbGenero.addItem(new Categorias("Suspenso"));
+		cbGenero.addItem(new Categorias("Romantica"));
+		
+		
+		//BOTÓN ACEPTAR
 		btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBounds(126, 195, 89, 23);
 		contentPane.add(btnAceptar);
