@@ -12,8 +12,6 @@ public class Peliculas {
 		cont++;
 		
 		this.id = cont;
-		this.nombre = "Sin nombre";
-		this.setCategoria(new Categorias());
 	}
 	
 	
@@ -52,7 +50,7 @@ public class Peliculas {
 	//METODOS ÉSTATICOS
 	public static int getProximoID() {
 
-	 return cont;
+	 return cont +1;
 
 	}
 	

@@ -4,6 +4,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -39,9 +40,11 @@ public class MenuPrincipal extends JFrame {
 		JMenuItem mntmAgregar = new JMenuItem("Agregar");
 		mntmAgregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AgregarPelicula menuAgregar = new AgregarPelicula();
-				menuAgregar.setVisible(true);
-				
+				contentPane.removeAll();
+				AgregarPelicula panel = new AgregarPelicula();
+				contentPane.add(panel);
+				contentPane.repaint();
+				contentPane.revalidate();
 			}
 		});
 		mnPeliculas.add(mntmAgregar);
