@@ -3,6 +3,8 @@ package ejercicio1;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -110,15 +112,22 @@ public class AgregarPelicula extends JPanel {
 		btnAceptar.setBounds(165, 200, 71, 23);
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-	
-					Peliculas pelicula = new Peliculas();
+				
+				if((textNombre.getText() != null) && (!textNombre.getText().isEmpty()) && (((Categorias)cbGenero.getSelectedItem()).toString() != "Seleccione un genero"))  {
+					Peliculas pelicula = new Peliculas();				
 					pelicula.setNombre(textNombre.getText());
 					pelicula.setCategoria( ((Categorias)cbGenero.getSelectedItem()));
+					
 					listModel.addElement(pelicula);
 					
 					textNombre.setText("");
 					cbGenero.setSelectedIndex(0);
 					lblIDPelicula.setText(Integer.toString(Peliculas.getProximoID()));
+					}
+				else {
+					JOptionPane.showConfirmDialog(null, "No se pudo agregar la pelicula, corrobore los campos");
+				}
+					
 				}
 			});
 		GridBagConstraints gbc_btnAceptar = new GridBagConstraints();
