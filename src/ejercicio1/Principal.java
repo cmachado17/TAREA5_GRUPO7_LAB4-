@@ -37,7 +37,6 @@ public class Principal extends JFrame{
 	
 		public Principal() {
 		
-		//listModel = new DefaultListModel <Peliculas> ();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400, 250, 550, 400);

@@ -53,5 +53,11 @@ public class Peliculas {
 	 return cont +1;
 
 	}
+
+
+	@Override
+	public String toString() {
+		return "Peliculas [id=" + id + ", nombre=" + nombre + ", categoria=" + categoria + "]";
+	}
 	
 }
