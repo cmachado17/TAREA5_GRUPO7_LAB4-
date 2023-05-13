@@ -37,7 +37,7 @@ public class Principal extends JFrame{
 	
 		public Principal() {
 		
-		listModel = new DefaultListModel <Peliculas> ();
+		//listModel = new DefaultListModel <Peliculas> ();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400, 250, 550, 400);
@@ -63,10 +63,23 @@ public class Principal extends JFrame{
 				contentPane.revalidate();
 			}
 		});
+		
 		mnPeliculas.add(mntmAgregar);
 
 		JMenuItem mntmListar = new JMenuItem("Listar");
+		mntmListar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				contentPane.removeAll();
+				ListarPeliculas panel = new ListarPeliculas();
+				panel.setDefaultListModel(listModel);
+				contentPane.add(panel);
+				contentPane.repaint();
+				contentPane.revalidate();
+		}
+	});
+		
 		mnPeliculas.add(mntmListar);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

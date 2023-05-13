@@ -142,6 +142,14 @@ public class AgregarPelicula extends JPanel {
 	{
 		this.listModel = listModelRecibido;
 	}
+
+	public DefaultListModel<Peliculas> getListModel() {
+		return listModel;
+	}
+
+	public void setListModel(DefaultListModel<Peliculas> listModel) {
+		this.listModel = listModel;
+	}
 }
 
 
