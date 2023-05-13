@@ -57,7 +57,7 @@ public class Peliculas {
 
 	@Override
 	public String toString() {
-		return "Peliculas [id=" + id + ", nombre=" + nombre + ", categoria=" + categoria + "]";
+		return "Id: " + id + " | Nombre: " + nombre + " | Categoría: " + categoria;
 	}
 	
 }

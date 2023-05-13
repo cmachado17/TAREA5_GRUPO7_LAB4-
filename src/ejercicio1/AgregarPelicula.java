@@ -125,11 +125,11 @@ public class AgregarPelicula extends JPanel {
 					lblIDPelicula.setText(Integer.toString(Peliculas.getProximoID()));
 					}
 				else {
-					JOptionPane.showConfirmDialog(null, "No se pudo agregar la pelicula, corrobore los campos");
+					JOptionPane.showMessageDialog(null, "No se pudo agregar la pelicula, corrobore los campos");
 				}
 					
-				}
-			});
+			}
+		});
 		GridBagConstraints gbc_btnAceptar = new GridBagConstraints();
 		gbc_btnAceptar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnAceptar.anchor = GridBagConstraints.NORTHWEST;
