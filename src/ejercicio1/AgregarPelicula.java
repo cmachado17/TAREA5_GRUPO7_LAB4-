@@ -8,10 +8,16 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import javax.swing.JTextField;
+
+import com.sun.xml.internal.bind.v2.runtime.reflect.ListIterator;
+
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -120,14 +126,19 @@ public class AgregarPelicula extends JPanel {
 					
 					listModel.addElement(pelicula);
 					
+					listModel=ordenarLista(listModel);
+					
+					mostarListaOrdenada(listModel);
+					
 					textNombre.setText("");
 					cbGenero.setSelectedIndex(0);
 					lblIDPelicula.setText(Integer.toString(Peliculas.getProximoID()));
+
 					}
 				else {
 					JOptionPane.showMessageDialog(null, "No se pudo agregar la pelicula, corrobore los campos");
 				}
-					
+				
 			}
 		});
 		GridBagConstraints gbc_btnAceptar = new GridBagConstraints();
@@ -149,6 +160,31 @@ public class AgregarPelicula extends JPanel {
 
 	public void setListModel(DefaultListModel<Peliculas> listModel) {
 		this.listModel = listModel;
+	}
+	
+	
+	private DefaultListModel<Peliculas> ordenarLista(DefaultListModel<Peliculas> listModel) {
+		List <Peliculas> listaAOrdenar = new ArrayList<>();
+		for (int i=0; i<listModel.size(); i++) {
+			listaAOrdenar.add((Peliculas)listModel.get(i));
+		}
+		
+		Collections.sort(listaAOrdenar);
+		
+		DefaultListModel<Peliculas> model = new DefaultListModel<>();
+			 for(Peliculas val : listaAOrdenar) {
+				 model.addElement(val);					 
+			 }
+				 
+		return model;
+	}
+	
+	void mostarListaOrdenada(DefaultListModel<Peliculas> listModel) {
+		//List <Peliculas> mostrar = new ArrayList<>();
+		for (int i=0; i<listModel.size(); i++) {
+			System.out.println(listModel.get(i));
+		}
+		System.out.println("Fin de la lista");
 	}
 }
 

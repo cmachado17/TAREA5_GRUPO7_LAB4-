@@ -8,7 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import java.awt.BorderLayout;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.awt.Font;
 
 import javax.swing.JLabel;
@@ -62,8 +64,4 @@ public class ListarPeliculas extends JPanel{
 		this.listModel = listModelRecibido;
 		listPeliculas.setModel(this.listModel);
 	}
-
-
-	
-
 }
