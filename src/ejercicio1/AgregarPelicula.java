@@ -126,9 +126,11 @@ public class AgregarPelicula extends JPanel {
 					
 					listModel.addElement(pelicula);
 					
-					listModel=ordenarLista(listModel);
+					ordenarLista(listModel);
 					
-					mostarListaOrdenada(listModel);
+					//mostarListaOrdenada(listModel);
+					
+					
 					
 					textNombre.setText("");
 					cbGenero.setSelectedIndex(0);
@@ -163,7 +165,7 @@ public class AgregarPelicula extends JPanel {
 	}
 	
 	
-	private DefaultListModel<Peliculas> ordenarLista(DefaultListModel<Peliculas> listModel) {
+	private void ordenarLista(DefaultListModel<Peliculas> listModel) {
 		List <Peliculas> listaAOrdenar = new ArrayList<>();
 		for (int i=0; i<listModel.size(); i++) {
 			listaAOrdenar.add((Peliculas)listModel.get(i));
@@ -171,12 +173,11 @@ public class AgregarPelicula extends JPanel {
 		
 		Collections.sort(listaAOrdenar);
 		
-		DefaultListModel<Peliculas> model = new DefaultListModel<>();
+		//DefaultListModel<Peliculas> model = new DefaultListModel<>();
+		listModel.removeAllElements();
 			 for(Peliculas val : listaAOrdenar) {
-				 model.addElement(val);					 
+				listModel.addElement(val);				 
 			 }
-				 
-		return model;
 	}
 	
 	void mostarListaOrdenada(DefaultListModel<Peliculas> listModel) {

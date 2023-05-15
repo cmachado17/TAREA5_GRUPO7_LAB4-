@@ -17,7 +17,7 @@ public class Principal extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
-	private static DefaultListModel <Peliculas> listModel;
+	public static DefaultListModel <Peliculas> listModel;
 
 	public static void main(String[] args) {
 
